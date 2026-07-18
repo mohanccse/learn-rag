@@ -2,292 +2,419 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Mohanakrishnan Chandrasekaran — Resume</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohanakrishnan Chandrasekaran</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  :root{
+    --ink:#16212e;
+    --ink-soft:#3d4a5c;
+    --paper:#f7f7f4;
+    --panel:#101a26;
+    --accent:#b5772f;
+    --accent-soft:#e7dcc9;
+    --line:#d8d6cd;
+    --line-soft:#e7e5dd;
+  }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  *{box-sizing:border-box;margin:0;padding:0;}
 
-body{
-    background:#f5f7fb;
-    font-family:'Inter',sans-serif;
-    color:#222;
-}
+  html,body{
+    background:#e9e8e2;
+    font-family:'Public Sans',sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
 
-.resume{
-    width:1000px;
-    margin:30px auto;
-    background:#fff;
+  .page{
+    width:210mm;
+    min-height:297mm;
+    margin:14px auto;
+    background:var(--paper);
     display:grid;
-    grid-template-columns:320px 1fr;
-    box-shadow:0 20px 50px rgba(0,0,0,.08);
-    border-radius:14px;
-    overflow:hidden;
-}
+    grid-template-columns:66mm 1fr;
+    box-shadow:0 10px 40px rgba(20,20,10,0.18);
+    position:relative;
+  }
 
-.left{
-    background:#0f172a;
-    color:white;
-    padding:35px;
-}
+  /* ---------- LEFT RAIL ---------- */
+  .rail{
+    background:var(--panel);
+    color:#eef1f4;
+    padding:11mm 8mm 8mm 10mm;
+    position:relative;
+  }
+  .rail::after{
+    content:"";
+    position:absolute;
+    top:0; right:0; bottom:0;
+    width:2px;
+    background:linear-gradient(180deg,var(--accent),transparent 70%);
+  }
 
-.right{
-    padding:40px;
-}
-
-h1{
-    font-size:34px;
-    line-height:1.1;
-    margin-bottom:8px;
-}
-
-.role{
-    color:#38bdf8;
-    font-weight:600;
-    font-size:15px;
-    margin-bottom:25px;
-}
-
-.section{
-    margin-bottom:28px;
-}
-
-.section h2{
-    font-size:13px;
-    letter-spacing:1px;
+  .rail .id-mark{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:8.4px;
+    letter-spacing:.14em;
+    color:var(--accent-soft);
     text-transform:uppercase;
-    margin-bottom:12px;
-    color:#38bdf8;
-}
-
-.left p,
-.left li{
-    font-size:14px;
-    line-height:1.6;
-    color:#dbe4f0;
-}
-
-.contact p{
-    margin-bottom:8px;
-}
-
-.skills li,
-.certifications li{
-    margin-bottom:10px;
-}
-
-.summary{
-    line-height:1.75;
-    font-size:14px;
-    color:#444;
-}
-
-.job{
-    margin-bottom:22px;
-}
-
-.job h3{
-    font-size:18px;
-    margin-bottom:4px;
-}
-
-.company{
-    font-weight:600;
-    color:#0f172a;
-}
-
-.duration{
-    color:#64748b;
-    font-size:13px;
-    margin-bottom:8px;
-}
-
-.job p{
-    font-size:14px;
-    line-height:1.6;
-    color:#444;
-}
-
-.edu{
-    margin-bottom:16px;
-}
-
-.edu strong{
+    opacity:.75;
+    margin-bottom:6mm;
     display:block;
-}
+  }
 
-.footer{
-    margin-top:20px;
-    font-size:12px;
-    color:#777;
-}
+  .rail h1{
+    font-family:'Newsreader',serif;
+    font-weight:600;
+    font-size:24px;
+    line-height:1.14;
+    color:#ffffff;
+    margin-bottom:3mm;
+  }
 
+  .rail .role{
+    font-size:11px;
+    color:var(--accent-soft);
+    line-height:1.5;
+    font-weight:500;
+    margin-bottom:9mm;
+    padding-bottom:8mm;
+    border-bottom:1px solid rgba(255,255,255,.14);
+  }
+
+  .rail .block{margin-bottom:8mm;}
+
+  .rail .block-title{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:8.6px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:3mm;
+  }
+
+  .contact-list{list-style:none;font-size:9.6px;line-height:1.9;color:#cfd6de;}
+  .contact-list li{word-break:break-word;}
+  .contact-list a{color:#cfd6de;text-decoration:none;}
+
+  .tag-cloud{display:flex;flex-wrap:wrap;gap:4px;}
+  .tag{
+    font-size:8.7px;
+    padding:3px 7px;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:2px;
+    color:#dfe4e9;
+    line-height:1.4;
+    white-space:nowrap;
+  }
+
+  .cert-list{list-style:none;font-size:9.4px;line-height:1.65;color:#cfd6de;}
+  .cert-list li{position:relative;padding-left:10px;margin-bottom:5px;}
+  .cert-list li::before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;background:var(--accent);}
+  .cert-list .yr{display:block;font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--accent-soft);opacity:.8;margin-top:1px;}
+
+  .edu-item{font-size:9.6px;color:#cfd6de;line-height:1.55;margin-bottom:6mm;}
+  .edu-item .deg{color:#fff;font-weight:600;display:block;font-size:10px;}
+  .edu-item .sch{display:block;margin-top:1px;}
+  .edu-item .yr{font-family:'IBM Plex Mono',monospace;font-size:8.4px;color:var(--accent-soft);opacity:.8;}
+
+  /* ---------- MAIN COLUMN ---------- */
+  .main{padding:11mm 12mm 8mm 10mm;}
+
+  .headline{margin-bottom:7mm;}
+  .headline .loc{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:9px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:2.5mm;
+  }
+  .headline p{
+    font-size:10.6px;
+    line-height:1.62;
+    color:var(--ink-soft);
+    max-width:100%;
+  }
+
+  section{margin-bottom:7mm;}
+
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    margin-bottom:4mm;
+  }
+  .sec-head .num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:9px;
+    color:var(--accent);
+  }
+  .sec-head h2{
+    font-family:'Newsreader',serif;
+    font-weight:600;
+    font-size:14.5px;
+    letter-spacing:.02em;
+    color:var(--ink);
+  }
+  .sec-head::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+    transform:translateY(3px);
+  }
+
+  .job{margin-bottom:5.5mm;}
+  .job:last-child{margin-bottom:0;}
+  .job-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:2px 10px;
+    margin-bottom:1.2mm;
+  }
+  .job-top .role-co{
+    font-size:11.6px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .job-top .role-co span{
+    font-weight:400;
+    color:var(--ink-soft);
+  }
+  .job-top .dates{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:8.8px;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .job-loc{
+    font-size:9px;
+    color:var(--ink-soft);
+    margin-bottom:2mm;
+    font-style:italic;
+  }
+  .job ul{
+    list-style:none;
+    padding-left:0;
+  }
+  .job ul li{
+    position:relative;
+    padding-left:11px;
+    font-size:9.9px;
+    line-height:1.56;
+    color:#293440;
+    margin-bottom:2.2mm;
+  }
+  .job ul li:last-child{margin-bottom:0;}
+  .job ul li::before{
+    content:"–";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-weight:700;
+  }
+  .job ul li b, .job ul li strong{
+    color:var(--ink);
+    font-weight:700;
+  }
+
+  .proj{margin-bottom:4mm;}
+  .proj:last-child{margin-bottom:0;}
+  .proj-title{
+    font-size:10.6px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:1mm;
+  }
+  .proj p{
+    font-size:9.7px;
+    line-height:1.55;
+    color:#293440;
+  }
+
+  .skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4mm 8mm;
+  }
+  .skill-group .grp-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:8.4px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:1.6mm;
+  }
+  .skill-group p{
+    font-size:9.4px;
+    line-height:1.6;
+    color:#293440;
+  }
+  .skill-group.full{grid-column:1 / -1;}
+
+  @media print{
+    html,body{background:#fff;margin:0;}
+    .page{
+      box-shadow:none;
+      margin:0;
+      width:210mm;
+      min-height:297mm;
+    }
+    @page{size:A4;margin:0;}
+  }
+
+  @media screen and (max-width:800px){
+    .page{width:100%;grid-template-columns:1fr;}
+    .rail::after{display:none;}
+  }
 </style>
 </head>
-
 <body>
+<div class="page">
 
-<div class="resume">
+  <!-- LEFT RAIL -->
+  <aside class="rail">
+    <span class="id-mark">Business Analyst → AI Product Mgmt</span>
+    <h1>Mohanakrishnan<br>Chandrasekaran</h1>
+    <div class="role">Product Discovery · User Research · PRDs · Prioritization<br>Retail · POS · E-commerce · SaaS</div>
 
-<div class="left">
+    <div class="block">
+      <div class="block-title">Contact</div>
+      <ul class="contact-list">
+        <li><a href="mailto:mohanccse@gmail.com">mohanccse@gmail.com</a></li>
+        <li>+91-9790466409</li>
+        <li>Rasipuram, Tamil Nadu, India</li>
+        <li><a href="https://www.linkedin.com/in/mohanakrishnanchandrasekaran-84487627b">LinkedIn Profile</a></li>
+      </ul>
+    </div>
 
-<h1>Mohanakrishnan<br>Chandrasekaran</h1>
+    <div class="block">
+      <div class="block-title">Education</div>
+      <div class="edu-item">
+        <span class="deg">B.E., Computer Engineering</span>
+        <span class="sch">Paavai College of Engineering</span>
+        <span class="yr">2010</span>
+      </div>
+      <div class="edu-item">
+        <span class="deg">Diploma, Computer Engineering</span>
+        <span class="sch">Muthayammal Polytechnic College, Namakkal</span>
+        <span class="yr">Jul 2004 – Apr 2007</span>
+      </div>
+    </div>
 
-<div class="role">
-Business Analyst → AI Product Management
+    <div class="block">
+      <div class="block-title">Certifications</div>
+      <ul class="cert-list">
+        <li>AI Product Management (AIPM) Fellowship — HelloPM<span class="yr">In progress · exp. Sep 2026</span></li>
+        <li>IBM Business Analyst Professional Certificate — Coursera<span class="yr">2026</span></li>
+        <li>IBM Data Analyst Professional Certificate — Coursera<span class="yr">2025</span></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block-title">Core Skills</div>
+      <div class="tag-cloud">
+        <span class="tag">PRD / BRD</span>
+        <span class="tag">User Research</span>
+        <span class="tag">RICE / PIF</span>
+        <span class="tag">JTBD</span>
+        <span class="tag">Figma</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Jira</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="headline">
+      <div class="loc">Product Delivery · Business Analysis · AI Products</div>
+      <p>Business Analyst with 4.5+ years of experience in product delivery across omnichannel retail commerce, POS, inventory management, subscription billing, payments, and route &amp; last-mile delivery solutions in B2B SaaS platforms. Proven ability to translate merchant and operational problems into product specifications, lead cross-functional execution, and apply generative AI to accelerate product quality and decision-making. Currently transitioning into Product Management through an AI Product Management fellowship, building expertise in AI-powered feature design, user research, and prototyping across domains, while actively pursuing product roles.</p>
+    </div>
+
+    <section>
+      <div class="sec-head"><span class="num">01</span><h2>Experience</h2></div>
+
+      <div class="job">
+        <div class="job-top">
+          <div class="role-co">Business Analyst <span>— Kliotech LLP</span></div>
+          <div class="dates">Nov 2021 – Apr 2026</div>
+        </div>
+        <div class="job-loc">Chennai, TN, India</div>
+        <ul>
+          <li>Coordinated sprint planning and drafted 200+ user stories in Jira across two multi-tenant platforms (Dive Shop 360 &amp; Smart FDS), enabling geofenced route planning and unified commerce for 700+ retail merchants.</li>
+          <li>Defined MVP scope and functional specifications for the Product Variant feature, driving end-to-end delivery and cross-functional UAT cycles with 100+ test cases per release enabling scalable inventory management for multi-location clients.</li>
+          <li>Designed a quality governance framework leveraging generative AI (ChatGPT, Claude) for test case creation and data analysis, expanding test coverage across e-commerce modules and cutting post-release product defects by ~25%.</li>
+          <li>Built SQL-driven data reconciliation workflows across 12+ core modules such as Invoices, Subscriptions, AR, Payments, and Purchase Orders, defining data quality KPIs and documenting trade-offs to drive ~95% bug-free production releases.</li>
+          <li>Performed end-to-end root cause analysis using SQL and access log investigation to resolve POS revenue variances from price-level misconfigurations and tax rounding errors across 20+ stores, coordinating same-day fixes and client communication.</li>
+          <li>Identified a recurring loyalty reward redemption defect across multiple DS360 clients and prioritized it for resolution, reducing related support tickets by 12%.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <div class="role-co">Content Developer <span>— Nithra Apps India Private Limited</span></div>
+          <div class="dates">Dec 2019 – Oct 2021</div>
+        </div>
+        <div class="job-loc">Tiruchengode, TN, India</div>
+        <ul>
+          <li>Managed content workflows for 2 high-traffic mobile apps and ensured managed campaign delivery and user engagement.</li>
+          <li>Designed 100+ puzzle matrices based on historical patterns, directly enhancing user interaction and gameplay stickiness.</li>
+          <li>Translated user behavior analytics into backlog items, partnering with UX design teams to optimize app retention metrics.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <div class="role-co">Linux Support Engineer <span>— Crown Solutions India Pvt Ltd</span></div>
+          <div class="dates">Aug 2011 – Oct 2014</div>
+        </div>
+        <div class="job-loc">Namakkal, TN, India</div>
+        <ul>
+          <li>Deployed Linux infrastructure across 20+ bank branches, executing SQL-based data migration for banking software implementation.</li>
+          <li>Coordinated vendor and branch stakeholders for data collection, troubleshot database issues for structured software migration.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="num">02</span><h2>Projects</h2></div>
+      <div class="proj">
+        <div class="proj-title">AI Product Buildathon</div>
+        <p>Currently developing an end-to-end AI product, managing the full lifecycle from problem discovery to MVP.</p>
+      </div>
+      <div class="proj">
+        <div class="proj-title">Blinkit AI Smart Substitute</div>
+        <p>Led product discovery (interviews + survey) to prioritize Blinkit's trust problem (PIF 13/15) via RICE, then authored the PRD and built a clickable prototype for an AI-ranked, consent-based stockout-substitution flow.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="num">03</span><h2>Skills</h2></div>
+      <div class="skills-grid">
+        <div class="skill-group full">
+          <div class="grp-label">Product Management &amp; Agile</div>
+          <p>Product Requirements (PRD/BRD), User Stories &amp; Acceptance Criteria, Wireframing (Figma), User Research (Interviews &amp; Surveys), Persona Development, User Journey Mapping, RICE/PIF Prioritization, Jobs-to-be-Done (JTBD), Competitive Analysis, Success Metrics Definition, Scrum (Sprint Planning), Jira, Confluence</p>
+        </div>
+        <div class="skill-group">
+          <div class="grp-label">Generative AI &amp; Prototyping</div>
+          <p>Prompt Engineering (ChatGPT, Claude, Gemini), Google AI Studio, Lovable, Cursor, Notebook LM, n8n, Notion, REST APIs, Postman</p>
+        </div>
+        <div class="skill-group">
+          <div class="grp-label">Data Analytics &amp; BI</div>
+          <p>SQL, Advanced Excel, Power BI, Looker Studio, Python (Pandas/NumPy — working knowledge)</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 </div>
-
-<div class="section contact">
-<h2>Contact</h2>
-
-<p>📍 Rasipuram, Tamil Nadu, India</p>
-<p>📧 mohanccse@gmail.com</p>
-<p>📱 9790466409</p>
-<p>🔗 linkedin.com/in/mohanakrishnan-chandrasekaran-84487627b</p>
-
-</div>
-
-<div class="section skills">
-
-<h2>Top Skills</h2>
-
-<ul>
-<li>Translating problems into product specifications</li>
-<li>Cross-functional execution</li>
-<li>Data-driven decisions</li>
-</ul>
-
-</div>
-
-<div class="section certifications">
-
-<h2>Certifications</h2>
-
-<ul>
-<li>IBM Business Analyst Professional Certificate</li>
-<li>Business Analysis: Process Modeling & Requirements Gathering</li>
-<li>Data Analysis with Python</li>
-<li>Introduction to Data Analytics</li>
-<li>Excel Skills for Business: Essentials</li>
-</ul>
-
-</div>
-
-</div>
-
-<div class="right">
-
-<div class="section">
-
-<h2>Professional Summary</h2>
-
-<p class="summary">
-Business Analyst with 4.5+ years of experience delivering product solutions across
-omnichannel retail commerce, POS, inventory management, subscription billing,
-payments, and last-mile delivery within B2B SaaS platforms.
-Experienced in product discovery, MVP definition, user stories, cross-functional
-coordination, UAT, SQL-based analysis, and AI-assisted product development.
-Currently expanding into AI Product Management through hands-on product work,
-including user research, prioritization frameworks, PRDs, wireframing, and
-clickable prototyping. Recently led product discovery for a quick-commerce
-stockout substitution problem, creating an AI-ranked consent-based solution from
-research through prototype.
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>Professional Experience</h2>
-
-<div class="job">
-
-<h3>Business Analyst</h3>
-
-<div class="company">Kliotech Pvt Ltd</div>
-
-<div class="duration">
-Nov 2021 – Apr 2026 | Chennai
-</div>
-
-<p>
-Worked across the product delivery lifecycle by translating business and merchant
-requirements into product specifications, defining MVP scope, writing user stories,
-supporting UAT, identifying product and data-quality issues using SQL, and
-leveraging generative AI for test-case creation and analysis.
-</p>
-
-</div>
-
-<div class="job">
-
-<h3>Content Developer</h3>
-
-<div class="company">Nithra Apps</div>
-
-<div class="duration">
-Dec 2019 – Oct 2021
-</div>
-
-<p>
-Created and maintained culturally accurate content for Nithra Tamil Calendar
-and Solliadi. Improved engagement through push notifications,
-daily challenges, ASO optimization, and user feedback integration.
-</p>
-
-</div>
-
-<div class="job">
-
-<h3>Linux Support Engineer</h3>
-
-<div class="company">Crown Solutions India Pvt Ltd</div>
-
-<div class="duration">
-Aug 2011 – Oct 2014
-</div>
-
-<p>
-Administered Linux server environments for cooperative banking institutions,
-maintained client-server architecture, performed SQL migrations,
-implemented automated backups, and ensured reliable banking operations.
-</p>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Education</h2>
-
-<div class="edu">
-<strong>HelloPM</strong>
-AI Product Management Cohort (2026)
-</div>
-
-<div class="edu">
-<strong>Paavai College of Engineering</strong>
-Bachelor of Engineering – Computer Engineering
-</div>
-
-<div class="edu">
-<strong>Muthayammal Polytechnic College</strong>
-Diploma in Computer Engineering
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </body>
 </html>
